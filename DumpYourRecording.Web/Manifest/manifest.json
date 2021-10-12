@@ -1,0 +1,127 @@
+{
+    "$schema": "https://github.com/OfficeDev/microsoft-teams-app-schema/blob/preview/DevPreview/MicrosoftTeams.schema.json",
+    "manifestVersion": "devPreview",
+    "version": "1.0.0",
+    "id": "371d64f0-323d-4f46-ab7a-a00f551dc561",
+    "packageName": "com.contoso.helloworld",
+    "developer": {
+        "name": "Contoso",
+        "websiteUrl": "https://www.microsoft.com",
+        "privacyUrl": "https://www.microsoft.com/privacy",
+        "termsOfUseUrl": "https://www.microsoft.com/termsofuse"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "AyushiTest",
+        "full": "AyushiTest"
+    },
+    "description": {
+        "short": "Dump Your Recording",
+        "full": "This provides you the provision of keeping the recordings of the meetings you missed/slept over, in an organized manner."
+    },
+    "accentColor": "#60A18E",
+    "configurableTabs": [
+        {
+            "configurationUrl": "https://dumpyourrecording.azurewebsites.net/",
+            "canUpdateConfiguration": true,
+            "scopes": [
+                "team",
+                "groupchat"
+            ],
+            "context": [
+                "channelTab",
+                "meetingSidePanel",
+                "meetingDetailsTab",
+                "meetingChatTab",
+                "meetingStage"
+            ],
+            "supportedSharePointHosts": [
+                "sharePointWebPart"
+            ]
+        }
+    ],
+    "staticTabs": [
+        {
+            "entityId": "Testing",
+            "name": "Ayushi Test Tab",
+            "contentUrl": "https://dumpyourrecording.azurewebsites.net/",
+            "websiteUrl": "https://dumpyourrecording.azurewebsites.net/",
+            "scopes": [
+                "personal"
+            ]
+        },
+        {
+            "entityId": "conversations",
+            "scopes": [
+                "personal"
+            ]
+        },
+        {
+            "entityId": "com.contoso.helloworld.hellotab",
+            "name": "Hello Tab",
+            "contentUrl": "https://yourteamsapp.ngrok.io/hello",
+            "scopes": [
+                "personal"
+            ]
+        },
+        {
+            "entityId": "about",
+            "scopes": [
+                "personal"
+            ]
+        }
+    ],
+    "bots": [
+        {
+            "botId": "1346fea2-ccff-49f1-8c6e-c93e3b6ad23b",
+            "scopes": [
+                "personal",
+                "team",
+                "groupchat"
+            ],
+            "supportsFiles": true,
+            "isNotificationOnly": false,
+            "supportsCalling": true,
+            "supportsVideo": true
+        }
+    ],
+    "composeExtensions": [
+        {
+            "botId": "1346fea2-ccff-49f1-8c6e-c93e3b6ad23b",
+            "canUpdateConfiguration": true,
+            "commands": [
+                {
+                    "id": "test-command",
+                    "type": "query",
+                    "title": "Testing command",
+                    "description": "This is for testing a command",
+                    "initialRun": true,
+                    "fetchTask": false,
+                    "context": [
+                        "commandBox",
+                        "compose"
+                    ],
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "title": "Name",
+                            "description": "name",
+                            "inputType": "text"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": [
+        "dumpyourrecording.azurewebsites.net",
+        "yourteamsapp.ngrok.io"
+    ]
+}
